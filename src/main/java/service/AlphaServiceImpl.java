@@ -38,7 +38,7 @@ public class AlphaServiceImpl implements AlphaService {
 	public Response flattenAlpha(Alpha alpha) {
 		FlattenAlpha flattenAlpha = new FlattenAlpha();
 		flattenAlpha.setAnimal(alpha.getAnimal());
-		flattenAlpha.setCityList(Arrays.toString(alpha.getCityList()));
+		flattenAlpha.setCityList(Arrays.toString(alpha.getCityList()).replaceAll("\\[|\\]|\\s", ""));
 		flattenAlpha.setFruit(alpha.getFruit());
 		return Response.ok(flattenAlpha).build();
 	}
